@@ -42,7 +42,7 @@ class PostController extends Controller
     }
 
     //to delete the posts
-    public function delete(Post $post)
+    public function destroy(Post $post)
     {
         if (Gate::denies('delete', $post)) {
             abort(403);
