@@ -24,6 +24,19 @@
             >Edit Post</a
           >
           @endcan
+
+          @can('delete', $post)
+          <!-- Delete Form -->
+          <form action="{{ route('posts.destroy', $post) }}" method="POST" class="inline-block ml-2" onsubmit="return confirm('Are you sure you want to delete this post?');">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="bg-red-500 hover:bg-red-700 rounded px-4 py-2 font-bold text-white">
+              Delete Post
+            </button>
+          </form>
+          @endcan
+
+
         </div>
       </div>
     </div>
