@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Models\Post;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Providers\RouteServiceProvider;
@@ -43,6 +44,17 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        //return redirect('/');
+
+        //Added code
+        // Find latest published post
+        $post = Post::where('is_published', true)->latest()->first();
+
+        /*if ($post) {
+            return redirect()->route('posts.show', $post->id);
+        }*/
+
+        // Fallback to posts index if no post found
+        return redirect()->route('posts.index');
     }
 }
