@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
+
 class AuthenticatedSessionController extends Controller
 {
     /**
@@ -50,9 +51,9 @@ class AuthenticatedSessionController extends Controller
         // Find latest published post
         $post = Post::where('is_published', true)->latest()->first();
 
-        /*if ($post) {
+        if ($post) {
             return redirect()->route('posts.show', $post->id);
-        }*/
+        }
 
         // Fallback to posts index if no post found
         return redirect()->route('posts.index');
