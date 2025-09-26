@@ -51,9 +51,9 @@ class AuthenticatedSessionController extends Controller
         // Find latest published post
         $post = Post::where('is_published', true)->latest()->first();
 
-        if ($post) {
+        /*if ($post) {
             return redirect()->route('posts.show', $post->id);
-        }
+        }*/
 
         // Fallback to posts index if no post found
         return redirect()->route('posts.index');
