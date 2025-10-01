@@ -35,14 +35,10 @@
       Post Comment
     </button>
     </form>
-
          @else
             <p class="text-gray-600 mt-6">
                 Please <a href="{{ route('login') }}" class="text-blue-500 hover:underline">log in</a> to leave
                 a comment.
             </p>
         @endauth
-
-
-
 </div>
