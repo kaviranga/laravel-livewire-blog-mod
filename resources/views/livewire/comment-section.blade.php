@@ -28,12 +28,12 @@
       ></textarea>
       @error('newComment') <span class="text-red-500">{{ $message }}</span> @enderror
     </div>
-    <button
-      type="submit"
-      class="bg-blue-500 hover:bg-blue-700 rounded px-4 py-2 font-bold text-white"
-    >
-      Post Comment
-    </button>
+        <button
+        type="submit"
+        class="bg-blue-500 hover:bg-blue-700 rounded px-4 py-2 font-bold text-white"
+        >
+        Post Comment
+        </button>
     </form>
          @else
             <p class="text-gray-600 mt-6">
