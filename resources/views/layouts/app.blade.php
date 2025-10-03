@@ -38,5 +38,15 @@
 
     <!-- Livewire Scripts -->
     @livewireScripts
+
+     <script>
+        document.addEventListener('livewire:load', function () {
+            window.Alpine && window.Alpine.discoverUninitializedComponents(() => {
+            window.Alpine.initTree(document.body);
+            });
+        });
+        </script>
+
+
 </body>
 </html>
