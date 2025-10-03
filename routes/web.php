@@ -42,6 +42,11 @@ Route::middleware('auth')->group(function () {
         return view('users.index');
     })->name('users.index');
 
+    Route::get('/sortable', function () {
+        return view('sortable');
+    })->name('sortable');
+
+
 });
 
 //Public routes for viewing posts
