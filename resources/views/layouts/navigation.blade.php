@@ -30,6 +30,12 @@
                     </x-nav-link>
                     @endauth
 
+                    @auth
+                    <x-nav-link :href="route('sortable')" :active="request()->routeIs('sortable')">
+                        {{ __('Sortable Table') }}
+                    </x-nav-link>
+                    @endauth
+
                     <x-nav-link :href="route('posts.index')" :active="request()->routeIs('posts.index')">
                         {{ __('Blog') }}
                     </x-nav-link>
