@@ -37,6 +37,11 @@ Route::middleware('auth')->group(function () {
     Route::patch('/posts/{post}', [PostController::class, 'update'])->name('posts.update');  // update post
     Route::delete('/posts/{post}', [PostController::class, 'destroy'])->name('posts.destroy');// delete post
 
+    //users tabel routes
+    Route::get('/users', function () {
+        return view('users.index');
+    })->name('users.index');
+
 });
 
 //Public routes for viewing posts
