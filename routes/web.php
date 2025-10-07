@@ -46,6 +46,10 @@ Route::middleware('auth')->group(function () {
         return view('sortable');
     })->name('sortable');
 
+    Route::get('/sortable_posts', function () {
+        return view('sortable_posts');
+    })->name('sortable_posts');
+
 
 });
 
